@@ -117,6 +117,24 @@ Title:
 <br>
 <br>
 
+#### Custom update messages
+
+Using the `msg` argument in the `update` method one can add additional text to the progress message:
+
+```python
+n = 10
+bar = pyprind.ProgBar(n)
+for i in range(n):
+    bar.update(msg='My current status')
+```
+
+```
+[10 %] Time elapsed: 00:00:01 | ETA: 00:00:04 | My current status
+```
+
+<br>
+<br>
+
 #### Choose Your Favorite Bar Style
 
 ```python
