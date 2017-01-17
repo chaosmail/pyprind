@@ -46,7 +46,7 @@ def test_item_tracking():
     bar = pyprind.ProgBar(len(items))
     for i in items:
         time.sleep(sleeptime)
-        bar.update(item_id=i)
+        bar.update(msg=i)
 
 
 def test_character():

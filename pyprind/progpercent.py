@@ -69,5 +69,5 @@ class ProgPercent(Prog):
                 self._stream_out(' Time elapsed: ' +
                                  self._get_time(self._elapsed()))
                 self._print_eta()
-            if self.item_id:
-                self._print_item_id()
+            if self.msg:
+                self._print_msg()

@@ -50,7 +50,7 @@ def test_item_tracking():
     perc = pyprind.ProgPercent(len(items))
     for i in items:
         time.sleep(sleeptime)
-        perc.update(item_id=i)
+        perc.update(msg=i)
 
 
 def test_force_flush():

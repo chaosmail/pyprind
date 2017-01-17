@@ -59,8 +59,8 @@ class ProgBar(Prog):
             except AttributeError:  # old version of psutil
                 self.process.get_cpu_percent()
                 self.process.get_memory_percent()
-        if self.item_id:
-            self._print_item_id()
+        if self.msg:
+            self._print_msg()
 
     def _adjust_width(self):
         """Shrinks bar if number of iterations is less than the bar width"""
@@ -96,6 +96,6 @@ class ProgBar(Prog):
             self._print_progress_bar(progress)
             if self.track:
                 self._print_eta()
-            if self.item_id:
-                self._print_item_id()
+            if self.msg:
+                self._print_msg()
         self.last_progress = progress
