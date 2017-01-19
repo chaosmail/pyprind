@@ -34,6 +34,7 @@ class Prog():
         self.start = time.time()
         self.end = None
         self.msg = None
+        self.longest_msg = 0
         self.eta = None
         self.total_time = 0.0
         self.last_time = self.start
@@ -73,6 +74,10 @@ class Prog():
 
         """
         self.msg = msg
+
+        if msg is not None and len(str(msg)) > self.longest_msg:
+            self.longest_msg = len(str(msg))
+
         self.cnt += iterations
         self._print(force_flush=force_flush)
         self._finish()
@@ -169,7 +174,7 @@ class Prog():
 
     def _print_msg(self):
         """ Prints a msg behind the tracking object."""
-        self._stream_out(' | %s' % self.msg)
+        self._stream_out(' | %s' % str(self.msg).ljust(self.longest_msg, " "))
         self._stream_flush()
 
     def __repr__(self):
